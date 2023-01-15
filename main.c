@@ -322,8 +322,8 @@ int main(int argc, char *argv[]) {
 
     mg_mgr_init(&mgr);
     printf("Starting web server on port %s\n", port);
-    char *str_port = malloc(20);
-    sprintf(str_port, "http://0.0.0.0:%s", port);
+    char *str_port = malloc(23);
+    sprintf(str_port, "http://127.0.0.1:%s", port);
     nc = mg_http_listen(&mgr, str_port, ev_handler, &mgr);
     if (nc == NULL) {
         printf("Failed to create listener\n");
